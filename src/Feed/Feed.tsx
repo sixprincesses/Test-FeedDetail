@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
-import FeedCommentInput from "./FeedReplyInput";
-import FeedReplys from "./FeedReplys";
+import FeedCommentInput from "./FeedCommentInput";
+import FeedReplys from "./FeedComments";
 
 const Container = styled.div`
   width: 600px;
