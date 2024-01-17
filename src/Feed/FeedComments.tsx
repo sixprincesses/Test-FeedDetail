@@ -4,6 +4,7 @@ import { color2 } from "../constants/colors";
 
 const CommentsContainer = styled.div`
   border: 3px solid ${color2};
+  border-radius: 5px;
   padding: 20px;
 `;
 
