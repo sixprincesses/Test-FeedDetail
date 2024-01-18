@@ -2,17 +2,17 @@ import styled from "@emotion/styled";
 import FeedComment from "./FeedComment";
 import { color2 } from "../constants/colors";
 
-const CommentsContainer = styled.div`
+const CommentListContainer = styled.div`
   border: 3px solid ${color2};
   border-radius: 5px;
   padding: 20px;
 `;
 
-const FeedComments = () => {
-  const commentItems = Array.from({ length: 10 }, (_, index) => (
+const FeedCommentList = () => {
+  const commentList = Array.from({ length: 10 }, (_, index) => (
     <FeedComment key={index} />
   ));
-  return <CommentsContainer>{commentItems}</CommentsContainer>;
+  return <CommentListContainer>{commentList}</CommentListContainer>;
 };
 
-export default FeedComments;
+export default FeedCommentList;

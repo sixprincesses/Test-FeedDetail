@@ -58,7 +58,7 @@ const FeedCommentInput = ({ width = 80, height = 25 }: CommentInputProps) => {
         className="input"
         value={comment}
         onChange={onChangeComment}
-        placeholder="고운말 사용하기"
+        placeholder="댓글을 남겨보세요."
       />
       <FaChevronRight className="sendButton" onClick={onSendComment} />
     </Container>

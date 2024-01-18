@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 import FeedCommentInput from "./FeedCommentInput";
-import FeedReplys from "./FeedComments";
+import FeedCommentList from "./FeedCommentList";
 
 const Container = styled.div`
   width: 600px;
@@ -10,7 +10,7 @@ const Feed = () => {
   return (
     <Container>
       <FeedCommentInput />
-      <FeedReplys />
+      <FeedCommentList />
     </Container>
   );
 };
