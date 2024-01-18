@@ -41,6 +41,10 @@ const Container = styled.div<CommentInputProps>`
   }
 `;
 
+const SendButton = styled.button`
+  
+`
+
 const FeedCommentInput = ({ width = 80, height = 25 }: CommentInputProps) => {
   const [comment, setComment] = useState("");
 
