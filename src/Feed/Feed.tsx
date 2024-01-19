@@ -8,10 +8,10 @@ const Container = styled.div`
 `;
 
 const Feed = () => {
-  const [FeedItems, setFeedItems] = useState({
+  const [FeedItems] = useState({
     title: "title이에용",
     images: [
-      "https://www.urbanbrush.net/web/wp-content/uploads/edd/2022/11/urbanbrush-20221108214712319041",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxmp7sE1ggI4_L7NGZWcQT9EyKaqKLeQ5RBg&usqp=CAU",
       "../assets/다운로드",
     ],
   });
@@ -20,7 +20,7 @@ const Feed = () => {
       <h1>{FeedItems.title}</h1>
       {FeedItems.images.map((image, idx) => {
         console.log(image + ".jpg");
-        return <img className="image" src={image + ".jpg"} key={idx} />;
+        return <img className="image" src={image} key={idx} />;
       })}
       <FeedCommentInput />
       <FeedCommentList />

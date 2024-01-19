@@ -5,6 +5,8 @@ import React from "react";
 import { color2 } from "../constants/colors";
 import { FeedType } from "./FeedCardList";
 import { Viewer } from "@toast-ui/react-editor";
+import FeedCardHeader from "./FeedCardHeader";
+import FeedCommentInput from "../Feed/FeedCommentInput";
 
 interface FeedProps {
   feed: FeedType;
@@ -14,25 +16,25 @@ const styled = emotionStyled;
 
 const Container = styled.div`
   border: 3px solid ${color2};
-
-  .image {
-    width: 150px;
-    height: 150px;
-  }
+  border-radius: 20px;
+  padding: 10px;
+  margin: 30px auto;
 `;
 
 const gitPlugin = () => {
   const toHTMLRenderers = {
     Git(node: any) {
-      const body = node.literal;
-      console.log(body);
-
+      let body = node.literal;
+      // body = body.split("\n");
+      // body = body.join("<br/>");
+      body = body.replace(/\n/g, "<br/>");
+      // 정규표현식 활용하여 치환
       return [
         {
           type: "openTag",
           tagName: "div",
           outerNewLine: true,
-          attributes: { style: "color:hotpink; background-color:black;" },
+          attributes: { style: `color:hotpink; background-color:black` },
         },
         { type: "html", content: body },
         { type: "closeTag", tagName: "div", outerNewLine: true },
@@ -46,9 +48,18 @@ const gitPlugin = () => {
 const FeedCardContainer: React.FC<FeedProps> = ({ feed }) => {
   return (
     <Container>
-      <h1>{feed.name}</h1>
-      <img src={feed.profileImage} className="image" />
-      <Viewer initialValue={feed.content} plugins={[gitPlugin]} theme="dark" />
+      <FeedCardHeader
+        name={feed.name}
+        image={feed.profileImage}
+        time={feed.time}
+      />
+
+      <Viewer
+        initialValue={feed.content.split("\n").slice(0, 7).join("\n")}
+        plugins={[gitPlugin]}
+      />
+
+      <FeedCommentInput />
     </Container>
   );
 };

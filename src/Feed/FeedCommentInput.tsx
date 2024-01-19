@@ -16,7 +16,7 @@ interface CommentInputProps {
 }
 
 const Container = styled.div<CommentInputProps>`
-  margin: 10px auto;
+  margin: 10px;
   display: flex;
   width: 80%;
 
@@ -40,10 +40,6 @@ const Container = styled.div<CommentInputProps>`
     }
   }
 `;
-
-const SendButton = styled.button`
-  
-`
 
 const FeedCommentInput = ({ width = 80, height = 25 }: CommentInputProps) => {
   const [comment, setComment] = useState("");
